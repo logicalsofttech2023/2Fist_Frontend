@@ -111,7 +111,7 @@ const TransactionList = () => {
 
     try {
       const res = await axios.post(
-        "https://backend.2fist.com/user/api/coordinatorTransjectionList",
+        `${process.env.REACT_APP_API_KEY}coordinatorTransjectionList`,
         data,
         { headers: { "Content-Type": "application/json" } }
       );
@@ -146,18 +146,7 @@ const TransactionList = () => {
     });
   };
 
-  const getStatusBadge = (status) => {
-    switch (status.toLowerCase()) {
-      case "pending":
-        return <span className="badge bg-warning text-dark">Pending</span>;
-      case "approved":
-        return <span className="badge bg-success">Approved</span>;
-      case "rejected":
-        return <span className="badge bg-danger">Rejected</span>;
-      default:
-        return <span className="badge bg-secondary">{status}</span>;
-    }
-  };
+  
 
   return (
     <>
@@ -192,7 +181,7 @@ const TransactionList = () => {
                     </div>
                     <div className="group text-center">
                       <h4 className="display-5 mb-3 font-black">
-                        Data Not Found
+                        No Transaction List Found
                       </h4>
                     </div>
                   </div>
@@ -212,7 +201,7 @@ const TransactionList = () => {
                   </div>
                   <div className="group text-center">
                     <h4 className="display-5 mb-3 font-black">
-                      Data Not Found
+                      No Transaction List Found
                     </h4>
                   </div>
                 </div>

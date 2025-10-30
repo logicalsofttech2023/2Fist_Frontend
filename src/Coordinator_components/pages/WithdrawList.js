@@ -111,7 +111,7 @@ const WithdrawList = () => {
 
     try {
       const res = await axios.post(
-        "https://backend.2fist.com/user/api/coordinatorWithdrawList",
+        `${process.env.REACT_APP_API_KEY}coordinatorWithdrawList`,
         data,
         { headers: { "Content-Type": "application/json" } }
       );
@@ -192,7 +192,7 @@ const WithdrawList = () => {
                     </div>
                     <div className="group text-center">
                       <h4 className="display-5 mb-3 font-black">
-                        Data Not Found
+                        No Withdraw List Found
                       </h4>
                     </div>
                   </div>
@@ -212,7 +212,7 @@ const WithdrawList = () => {
                   </div>
                   <div className="group text-center">
                     <h4 className="display-5 mb-3 font-black">
-                      Data Not Found
+                      No Withdraw List Found
                     </h4>
                   </div>
                 </div>

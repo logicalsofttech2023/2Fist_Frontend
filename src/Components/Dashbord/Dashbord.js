@@ -16,7 +16,7 @@ const Dashbord = () => {
   const [width, setWidth] = useState(window.innerWidth);
   const [amaunt, getamaunt] = useState("");
   let [showprofiledata, setshowprofiledata] = useState({});
-  const [dashboardData, setDashboardData] = useState("")
+  const [dashboardData, setDashboardData] = useState("");
 
   // daynamicwidth get
   useEffect(() => {
@@ -33,19 +33,24 @@ const Dashbord = () => {
 
   useEffect(() => {
     dashboardCount();
-  }, [])
-  
+  }, []);
 
-  const dashboardCount = async ()=>{
-    const data = {
-      userId: userid?._id
+  const dashboardCount = async () => {
+    try {
+      const data = {
+        userId: userid?._id,
+      };
+      const res = await axios.post(
+        `${process.env.REACT_APP_API_KEY}userDashboard`,
+        data
+      );
+      if (res.status === 200) {
+        setDashboardData(res.data.data);
+      }
+    } catch (error) {
+      console.error("API Error:", error.response?.data || error.message);
     }
-    const res = await axios.post("https://backend.2fist.com/user/api/userDashboard",data);
-    if (res.status === 200) {
-      setDashboardData(res.data.data);
-    }
-    
-  }
+  };
 
   // logout hadnel
   let logout_handel = () => {
@@ -250,11 +255,7 @@ const Dashbord = () => {
       <section className="dashboard-section">
         <div className="container">
           <div className="row justify-content-center">
-            {width < 991 ? (
-              ""
-            ) : (
-              <Sidebar />
-            )}
+            {width < 991 ? "" : <Sidebar />}
             <div className="col-12 col-lg-9">
               {/* tab content */}
               <div className="tab-content" id="myTabContent">
@@ -289,6 +290,11 @@ const Dashbord = () => {
                             src={`${process.env.REACT_APP_IMG_URL}${showprofiledata?.userProfile}`}
                             alt="images"
                             className="rounded-circle"
+                            onError={(e) => {
+                                                e.target.onerror = null;
+                                                e.target.src =
+                                                  "/logo/newlogo.png";
+                                              }}
                           />
                         ) : (
                           <img
@@ -296,6 +302,11 @@ const Dashbord = () => {
                             src={`${process.env.REACT_APP_IMG_URL}${showprofiledata?.userProfile}`}
                             alt="images"
                             className="rounded-circle"
+                            onError={(e) => {
+                                                e.target.onerror = null;
+                                                e.target.src =
+                                                  "/logo/newlogo.png";
+                                              }}
                           />
                         )}
                         <h5 className="my-3">
@@ -416,7 +427,7 @@ const Dashbord = () => {
                                         Win Match
                                       </span>
                                       <span className="fw-bold price theme-text-secondary">
-                                      {dashboardData?.winMatch}
+                                        {dashboardData?.winMatch}
                                       </span>
                                     </div>
                                   </div>
@@ -448,7 +459,7 @@ const Dashbord = () => {
                                       Prizes Pool
                                     </span>
                                     <span className="fw-bold price theme-text-secondary">
-                                     $ {dashboardData?.winPrize}
+                                      $ {dashboardData?.winPrize}
                                     </span>
                                   </div>
                                 </div>
@@ -479,8 +490,8 @@ const Dashbord = () => {
                                       Offer Amount
                                     </span>
                                     <span className="fw-bold price theme-text-secondary">
-                                      <i className="bi bi-currency-dollar" />
-                                       $ {dashboardData?.offerAmount}
+                                      <i className="bi bi-currency-dollar" />${" "}
+                                      {dashboardData?.offerAmount}
                                     </span>
                                   </div>
                                 </div>

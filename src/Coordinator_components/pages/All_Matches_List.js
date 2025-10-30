@@ -31,7 +31,7 @@ const All_Matches_List = () => {
       coordinatorId: coordinator_userid,
     };
     const res = await axios.post(
-      "https://backend.2fist.com/user/api/coordinatorDashboardCount",
+      `${process.env.REACT_APP_API_KEY}coordinatorDashboardCount`,
       data
     );
 
@@ -257,7 +257,7 @@ const All_Matches_List = () => {
                               <img
                                 width={"80px"}
                                 height={"80px"}
-                                src="https://www.2fist.com/logo/Completed-PNG-File.png"
+                                src="/logo/Completed-PNG-File.png"
                                 alt="images"
                                 className="rounded-circle"
                               />
@@ -277,7 +277,7 @@ const All_Matches_List = () => {
                               <img
                                 width={"100px"}
                                 height={"80px"}
-                                src="https://www.2fist.com/logo/cancelled-png.png"
+                                src="/logo/cancelled-png.png"
                                 alt="images"
                                 // className="rounded-circle"
                               />

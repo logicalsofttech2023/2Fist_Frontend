@@ -357,6 +357,10 @@ const All_Teamsmatch_list = () => {
                                         className="img-fluid"
                                         alt="Games team"
                                         src={`${process.env.REACT_APP_IMG_URL}${items?.logo1}`}
+                                        onError={(e) => {
+                                          e.target.onerror = null;
+                                          e.target.src = "/logo/newlogo.png";
+                                        }}
                                       />
                                     ) : (
                                       <img
@@ -368,6 +372,10 @@ const All_Teamsmatch_list = () => {
                                         className="img-fluid"
                                         alt="Games team"
                                         src={`${process.env.REACT_APP_IMG_URL}${items?.logo1}`}
+                                        onError={(e) => {
+                                          e.target.onerror = null;
+                                          e.target.src = "/logo/newlogo.png";
+                                        }}
                                       />
                                     )}
                                   </figure>
@@ -396,6 +404,10 @@ const All_Teamsmatch_list = () => {
                                         className="img-fluid"
                                         alt="Games team"
                                         src={`${process.env.REACT_APP_IMG_URL}${items?.logo2}`}
+                                        onError={(e) => {
+                                          e.target.onerror = null;
+                                          e.target.src = "/logo/newlogo.png";
+                                        }}
                                       />
                                     ) : (
                                       <img
@@ -407,6 +419,10 @@ const All_Teamsmatch_list = () => {
                                         className="img-fluid"
                                         alt="Games team"
                                         src={`${process.env.REACT_APP_IMG_URL}${items?.logo2}`}
+                                        onError={(e) => {
+                                          e.target.onerror = null;
+                                          e.target.src = "/logo/newlogo.png";
+                                        }}
                                       />
                                     )}
                                   </figure>
@@ -433,7 +449,6 @@ const All_Teamsmatch_list = () => {
                                       updatematch(event, items?._id)
                                     }
                                     value={items?.matchStatus || "Upcoming"}
-
                                   >
                                     <option hidden value={1}>
                                       Select Status
@@ -453,7 +468,6 @@ const All_Teamsmatch_list = () => {
                                       update_win_march(event, items?._id)
                                     }
                                     value={items?.winnerTeam}
-
                                   >
                                     <option hidden value={1}>
                                       Select Status

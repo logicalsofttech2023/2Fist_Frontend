@@ -18,7 +18,7 @@ const Pagenotfound = () => {
           );
           console.log(response);
           if (response.status === 200) {
-            navigate("/goLiveTeams");
+            navigate("/all_Teamsmatch_list");
         }
     } catch (error) {
         console.log(error);

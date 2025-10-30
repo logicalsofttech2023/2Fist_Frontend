@@ -137,7 +137,7 @@ const CoordinatorLogin = () => {
                         </div>
                         <div className="col-12 col-lg-6 align-self-center text-center">
                             <figure className="mb-0 mt-5 pt-0 pt-lg-5 hero-image">
-                                <img src="https://www.2fist.com/assets/images/breadcrumb/signin.png" className="img-fluid " alt="hero image" />
+                                <img src="/assets/images/breadcrumb/signin.png" className="img-fluid " alt="hero image" />
                             </figure>
                         </div>
                     </div>

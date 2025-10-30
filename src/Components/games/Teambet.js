@@ -197,8 +197,8 @@ const Teambet = () => {
           .getElementById("remote-player-list")
           .appendChild(playerContainer);
 
-          remoteVideoTrack.play(playerContainer, { mirror: false });
-        }
+        remoteVideoTrack.play(playerContainer, { mirror: false });
+      }
 
       if (mediaType === "audio") {
         const remoteAudioTrack = user.audioTrack;
@@ -286,7 +286,6 @@ const Teambet = () => {
           if (!visible) return;
           setVisible(false);
         }}
-        
       >
         <p className="m-0">
           {/* login page section */}
@@ -479,7 +478,7 @@ const Teambet = () => {
                                       borderRadius: "50%",
                                     }}
                                     alt="Games team"
-                                    src="https://www.2fist.com/logo/newlogo.png"
+                                    src="/logo/newlogo.png"
                                   />
                                 ) : data?.data?.logo1?.startsWith(
                                     "https://"
@@ -493,6 +492,10 @@ const Teambet = () => {
                                     }}
                                     alt="Games team"
                                     src={`${process.env.REACT_APP_IMG_URL}${data?.data?.logo1}`}
+                                    onError={(e) => {
+                                      e.target.onerror = null;
+                                      e.target.src = "/logo/newlogo.png";
+                                    }}
                                   />
                                 ) : (
                                   <img
@@ -504,6 +507,11 @@ const Teambet = () => {
                                     }}
                                     alt="Games team"
                                     src={`${process.env.REACT_APP_IMG_URL}${data?.data?.logo1}`}
+                                    onError={(e) => {
+                                                e.target.onerror = null;
+                                                e.target.src =
+                                                  "/logo/newlogo.png";
+                                              }}
                                   />
                                 )}
                               </figure>
@@ -561,7 +569,7 @@ const Teambet = () => {
                                       borderRadius: "50%",
                                     }}
                                     alt="Games team"
-                                    src="https://www.2fist.com/logo/newlogo.png"
+                                    src="/logo/newlogo.png"
                                   />
                                 ) : data?.data?.logo2?.startsWith(
                                     "https://"
@@ -575,6 +583,11 @@ const Teambet = () => {
                                     }}
                                     alt="Games team"
                                     src={`${process.env.REACT_APP_IMG_URL}${data?.data?.logo2}`}
+                                    onError={(e) => {
+                                                e.target.onerror = null;
+                                                e.target.src =
+                                                  "/logo/newlogo.png";
+                                              }}
                                   />
                                 ) : (
                                   <img
@@ -586,6 +599,11 @@ const Teambet = () => {
                                     }}
                                     alt="Games team"
                                     src={`${process.env.REACT_APP_IMG_URL}${data?.data?.logo2}`}
+                                    onError={(e) => {
+                                                e.target.onerror = null;
+                                                e.target.src =
+                                                  "/logo/newlogo.png";
+                                              }}
                                   />
                                 )}
                               </figure>

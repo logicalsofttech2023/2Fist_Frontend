@@ -128,7 +128,7 @@ const WithdrawList = () => {
 
                                   <div className="group text-center">
                                     <h4 className="display-5 mb-3 font-black">
-                                      Data not found
+                                      No Withdraw List Found
                                     </h4>
                                     <button
                                       className="rounded-pill btn custom-btn-primary font-small primary-btn-effect"

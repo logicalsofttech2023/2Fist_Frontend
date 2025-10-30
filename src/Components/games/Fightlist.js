@@ -225,7 +225,7 @@ const Fightlist = () => {
                                     }}
                                     className="img-fluid"
                                     alt="Games team"
-                                    src="https://www.2fist.com/logo/newlogo.png"
+                                    src="/logo/newlogo.png"
                                   />
                                 ) : items?.logo1?.startsWith("https://") ? (
                                   <img
@@ -237,6 +237,10 @@ const Fightlist = () => {
                                     className="img-fluid"
                                     alt="Games team"
                                     src={`${process.env.REACT_APP_IMG_URL}${items?.logo1}`}
+                                    onError={(e) => {
+                                      e.target.onerror = null;
+                                      e.target.src = "/logo/newlogo.png";
+                                    }}
                                   />
                                 ) : (
                                   <img
@@ -248,6 +252,10 @@ const Fightlist = () => {
                                     className="img-fluid"
                                     alt="Games team"
                                     src={`${process.env.REACT_APP_IMG_URL}${items?.logo1}`}
+                                    onError={(e) => {
+                                      e.target.onerror = null;
+                                      e.target.src = "/logo/newlogo.png";
+                                    }}
                                   />
                                 )}
                               </figure>
@@ -266,7 +274,7 @@ const Fightlist = () => {
                                     }}
                                     className="img-fluid"
                                     alt="Games team"
-                                    src="https://www.2fist.com/logo/newlogo.png"
+                                    src="/logo/newlogo.png"
                                   />
                                 ) : items?.logo2?.startsWith("https://") ? (
                                   <img
@@ -278,6 +286,10 @@ const Fightlist = () => {
                                     className="img-fluid"
                                     alt="Games team"
                                     src={`${process.env.REACT_APP_IMG_URL}${items?.logo2}`}
+                                    onError={(e) => {
+                                      e.target.onerror = null;
+                                      e.target.src = "/logo/newlogo.png";
+                                    }}
                                   />
                                 ) : (
                                   <img
@@ -289,6 +301,10 @@ const Fightlist = () => {
                                     className="img-fluid"
                                     alt="Games team"
                                     src={`${process.env.REACT_APP_IMG_URL}${items?.logo2}`}
+                                    onError={(e) => {
+                                      e.target.onerror = null;
+                                      e.target.src = "/logo/newlogo.png";
+                                    }}
                                   />
                                 )}
                               </figure>

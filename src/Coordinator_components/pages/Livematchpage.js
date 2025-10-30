@@ -86,7 +86,7 @@ const Livematchpage = () => {
       };
 
       const response = await axios.post(
-        "https://backend.2fist.com/user/api/generateToken",
+        `${process.env.REACT_APP_API_KEY}generateToken`,
         objdata
       );
 
@@ -128,7 +128,7 @@ const Livematchpage = () => {
         matchId: data_live?.matchId,
       };
       axios
-        .post("https://backend.2fist.com/user/api/deleteliveToken", objdata)
+        .post(`${process.env.REACT_APP_API_KEY}deleteliveToken`, objdata)
         .then((res) => {
           console.log("res", res);
         })

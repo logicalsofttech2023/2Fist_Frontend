@@ -274,7 +274,7 @@ const AddTeams = () => {
                                   style={{ width: "75px", height: "75px" }}
                                   src={
                                     preview ||
-                                    `https://www.2fist.com/logo/newlogo.png`
+                                    `/logo/newlogo.png`
                                   }
                                   alt="Team A logo"
                                   className="rounded-circle"
@@ -295,7 +295,7 @@ const AddTeams = () => {
                                   style={{ width: "75px", height: "75px" }}
                                   src={
                                     preview2 ||
-                                    `https://www.2fist.com/logo/newlogo.png`
+                                    `/logo/newlogo.png`
                                   }
                                   alt="Team B logo"
                                   className="rounded-circle"

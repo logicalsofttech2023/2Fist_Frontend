@@ -507,6 +507,11 @@ const Header = () => {
                         alt="images"
                         className="rounded-circle"
                         src={`${process.env.REACT_APP_IMG_URL}${showprofiledata?.userProfile}`}
+                        onError={(e) => {
+                                                e.target.onerror = null;
+                                                e.target.src =
+                                                  "/logo/newlogo.png";
+                                              }}
                       />
                     ) : (
                       <img
@@ -518,6 +523,11 @@ const Header = () => {
                         alt="images"
                         className="rounded-circle"
                         src={`${process.env.REACT_APP_IMG_URL}${showprofiledata?.userProfile}`}
+                        onError={(e) => {
+                                                e.target.onerror = null;
+                                                e.target.src =
+                                                  "/logo/newlogo.png";
+                                              }}
                       />
                     )}
                   </Link>

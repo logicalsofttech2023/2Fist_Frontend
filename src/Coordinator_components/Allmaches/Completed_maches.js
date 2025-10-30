@@ -111,7 +111,7 @@ const Completed_maches = () => {
 
     try {
       const res = await axios.post(
-        "https://backend.2fist.com/user/api/coordinatorTeamList",
+        `${process.env.REACT_APP_API_KEY}coordinatorTeamList`,
         data,
         { headers: { "Content-Type": "application/json" } }
       );

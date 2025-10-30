@@ -190,7 +190,7 @@ const Commission_List = () => {
 
                                       <div className="group text-center">
                                         <h4 className="display-5 mb-3 font-black">
-                                          Data not found
+                                          No Commission List Found
                                         </h4>
                                       </div>
                                     </>
@@ -260,7 +260,7 @@ const Commission_List = () => {
                                                           }}
                                                           className="img-fluid"
                                                           alt="Games team"
-                                                          src="https://www.2fist.com/logo/newlogo.png"
+                                                          src="/logo/newlogo.png"
                                                         />
                                                       ) : items?.logo1?.startsWith(
                                                           "https://"
@@ -302,7 +302,7 @@ const Commission_List = () => {
                                                           }}
                                                           className="img-fluid"
                                                           alt="Games team"
-                                                          src="https://www.2fist.com/logo/newlogo.png"
+                                                          src="/logo/newlogo.png"
                                                         />
                                                       ) : items?.logo2?.startsWith(
                                                           "https://"

@@ -286,7 +286,7 @@ const Coordinator_dashboard = () => {
                     <div className="col-12 col-md-6 col-lg-4 mb-4">
                       <div className="pt-4 theme-transparent-bg theme-border-radius text-center">
                         <img
-                          src="https://www.2fist.com/assets/images/icons/dashboard-sidebar-icon-1.png"
+                          src="/assets/images/icons/dashboard-sidebar-icon-1.png"
                           alt="images"
                           className="rounded-circle"
                         />

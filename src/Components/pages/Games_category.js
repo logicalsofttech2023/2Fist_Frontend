@@ -70,6 +70,11 @@ const Games_category = () => {
                                       borderRadius: "50%",
                                     }}
                                     src={`${process.env.REACT_APP_IMG_URL}${items?.category_image}`}
+                                    onError={(e) => {
+                                                e.target.onerror = null;
+                                                e.target.src =
+                                                  "/logo/newlogo.png";
+                                              }}
                                     className="img-fluid"
                                     alt="Fantasy Games"
                                   />
